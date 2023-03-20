@@ -1,0 +1,12 @@
+{%  extends "WebApp/inicio.html" %}
+{% block contenido_cambia %}
+    {% if profesores %}
+        {% for profesor in profesores %}
+            <p>Nombre: {{ profesor.nombre }} {{ profesor.apellido }}</p>
+            <p>Curso: {{ profesor.cursos }}</p>
+        {% endfor %}
+    {% else %}
+        <h3>No hay profesores con ese nombre.</h3>
+    {% endif %}
+
+{% endblock %}

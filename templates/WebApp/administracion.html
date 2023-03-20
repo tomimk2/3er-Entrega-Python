@@ -1,0 +1,42 @@
+{%  extends "WebApp/inicio.html" %}
+
+    {% block contenido_cambia %}
+
+       <h1>Pagina de Administracion</h1>
+        <!-- Para Ingresar en un solo form-->
+        <h2>Ingreso Masivo</h2>
+        <form action="{% url "WebAppAdminAdd" %}" method="post">
+            {%  csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Añadir Curso">
+        </form>
+        <!-- Muestra la lista de todos los estudiantes-->
+        <h2>Lista de Estudiantes</h2>
+        {% if estudiantes %}
+        {% for estudiante in estudiantes %}
+            <p>Estudiante: {{ estudiante.nombre }} {{ estudiante.apellido }} Camada {{ estudiante.camada }}</p>
+        {% endfor %}
+        {% else %}
+        <h1>No hay Estudiantes en el momento</h1>
+        {% endif %}
+        <!-- Muestra la lista de todos los profesores-->
+        <h2>Lista de Profesores</h2>
+        {% if profesores %}
+        {% for profesor in profesores %}
+            <p>Profesor: {{ profesor.nombre }} {{ profesor.apellido }} Cursos: {{ profesor.cursos }}</p>
+        {% endfor %}
+        {% else %}
+        <h1>No hay Profesores en el momento</h1>
+        {% endif %}
+        <!-- Muestra la lista de todos los Cursos-->
+        <h2>Lista de Cursos</h2>
+        {% if cursos %}
+        {% for curso in cursos %}
+            <p>Curso: {{  curso.nombre }}</p>
+            <p>Camada: {{  curso.camada }}</p>
+        {% endfor %}
+        {% else %}
+        <h1>No hay cursos en el momento</h1>
+        {% endif %}
+
+    {%  endblock %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hernan Garcia 3ra Entrega</title>
+</head>
+<body>
+    <!-- Barra de Navegacion-->
+    <nav class="navbar navbar-light bg-light static-top">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'WebAppEstudiantes' %}">Estudiantes</a>
+                <a class="navbar-brand" href="{% url 'WebAppProfesores' %}">Profesores</a>
+                <a class="navbar-brand" href="{% url 'WebAppCursos' %}">Cursos</a>
+                <a class="navbar-brand" href="{% url 'WebAppAdmin' %}">Admin</a>
+            </div>
+    </nav>
+
+    <!-- Bloque a cambiar en Hijo-->
+    {% block contenido_cambia %}
+       <h1>Bienvenido a la pagina principal</h1>
+    {%  endblock %}
+</body>
+</html>

@@ -1,0 +1,11 @@
+{%  extends "WebApp/inicio.html" %}
+{% block contenido_cambia %}
+    {% if estudiantes %}
+        {% for estudiante in estudiantes %}
+            <p>Nombre: {{ estudiante.nombre }} {{ estudiante.apellido }}</p>
+        {% endfor %}
+    {% else %}
+        <h3>No hay estudiantes con ese nombre.</h3>
+    {% endif %}
+
+{% endblock %}

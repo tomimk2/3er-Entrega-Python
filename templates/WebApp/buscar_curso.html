@@ -1,0 +1,11 @@
+{%  extends "WebApp/inicio.html" %}
+{% block contenido_cambia %}
+    {% if cursos %}
+        {% for curso in cursos %}
+            <p>Nombre: {{ curso.nombre }} Camada: {{ curso.camada }}</p>
+        {% endfor %}
+    {% else %}
+        <h3>No hay cursos con ese nombre.</h3>
+    {% endif %}
+
+{% endblock %}

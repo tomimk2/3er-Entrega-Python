@@ -1,0 +1,18 @@
+{%  extends "WebApp/inicio.html" %}
+
+    {% block contenido_cambia %}
+       <h1>Bienvenido a la pagina de Estudiantes</h1>
+        <h2>Añadir Estudiante</h2>
+        <form action="{% url "WebAppCrearEstudiantes" %}" method="post">
+            {%  csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Añadir Estudiante">
+        </form>
+        <h2>Buscar estudiante</h2>
+        <form action="{% url "WebAppBuscarEstudiantes" %}">
+            {{ form_buscar.as_p }}
+            <input type="submit" value="Buscar Estudiante">
+        </form>
+
+
+    {%  endblock %}
