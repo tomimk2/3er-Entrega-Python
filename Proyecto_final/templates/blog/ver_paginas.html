@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block contenido_cambia %}
+    <h1>{{ titulo }}</h1>
+    {% for pagina in paginas %}
+        <h2>{{ pagina.titulo }}</h2>
+        <p>{{ pagina.cuerpo|slice:":20" }}...<a href="{% url "pagina" pagina.id %}">Leer Mas</a></p>
+        <p>Escrito por: <a href="{% url "profile" pagina.autor %}">{{ pagina.autor }}</a></p>
+    {% endfor %}
+
+{% endblock %}
